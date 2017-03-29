@@ -1,5 +1,8 @@
 package zx.test5;
-
+/**
+ * 有父类和子类继承关系的情况下，方法修饰为synchronized的没有线程安全问题 
+ * @author Carl_Hugo
+ */
 public class SyncDubbo2 {
 	
 	static class Main{
