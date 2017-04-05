@@ -5,7 +5,7 @@ import java.util.Random;
 public class Main {
 	
 	public static void main(String[] args) {
-		Master master = new Master(new Worker(),10);
+		Master master = new Master(new MyWorker(),10);
 		
 		Random r = new Random();
 		for(int i=0;i<100;i++){
