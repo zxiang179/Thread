@@ -5,6 +5,7 @@ import java.util.Random;
 public class Main {
 	
 	public static void main(String[] args) {
+		System.out.println("我的机器可用processor的数量："+Runtime.getRuntime().availableProcessors());
 		Master master = new Master(new MyWorker(),10);
 		
 		Random r = new Random();
