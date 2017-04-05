@@ -1,4 +1,4 @@
-package zx.design;
+package zx.design.future;
 
 public class FutureClient {
 	
