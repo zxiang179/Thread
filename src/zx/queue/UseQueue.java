@@ -65,10 +65,28 @@ public class UseQueue {
 		*/
 		
 		//不能往内存中存放元素
-		SynchronousQueue<String> queue = new SynchronousQueue<String>();
-		queue.add("asdasd");
-		
-		
+//		SynchronousQueue<String> queue = new SynchronousQueue<String>();
+//		queue.add("asdasd");
+		final SynchronousQueue<String> q = new SynchronousQueue<String>();
+		Thread t1 = new Thread(new Runnable(){
+			@Override
+			public void run() {
+				try {
+					System.out.println(q.take());
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		Thread t2 = new Thread(new Runnable(){
+			@Override
+			public void run() {
+				q.add("asdasd");
+			}
+		});
+		//现有take才能add
+		t1.start();
+		t2.start();
 	}
 
 }
