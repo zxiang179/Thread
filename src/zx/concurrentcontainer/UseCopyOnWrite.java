@@ -7,7 +7,5 @@ public class UseCopyOnWrite {
 	
 	CopyOnWriteArrayList<String> cwal = new CopyOnWriteArrayList<String>();
 	CopyOnWriteArraySet<String> cwas = new CopyOnWriteArraySet<String>();
-	
-	
 
 }

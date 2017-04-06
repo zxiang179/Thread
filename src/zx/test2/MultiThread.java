@@ -9,7 +9,6 @@ package zx.test2;
 public class MultiThread {
 	
 	private static int num =0;
-	
 	public static synchronized void printNum(String tag){
 //	public synchronized void printNum(String tag){
 		try{
@@ -40,15 +39,12 @@ public class MultiThread {
 		});
 		
 		Thread t2 = new Thread(new Runnable(){
-
 			@Override
 			public void run() {
 				m2.printNum("b");
 			}
 		});
-		
 		t1.start();
 		t2.start();
 	}
-
 }

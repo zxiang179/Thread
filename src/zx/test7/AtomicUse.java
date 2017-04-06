@@ -7,10 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AtomicUse {
 	
 	private static AtomicInteger count = new AtomicInteger(0);
-
 	//多个addAndGet在一个方法中是非原子性的，需要加synchronized进行修饰，保证4个addAndGet的原子性
 	private synchronized int multiAdd(){
-		try{
+		try{ 
 			Thread.sleep(100);
 		}catch(InterruptedException e){
 			e.printStackTrace();
@@ -37,7 +36,6 @@ public class AtomicUse {
 		for(Thread t:ts){
 			t.start();
 		}
-		
 	}
 	
 }

@@ -22,8 +22,6 @@ public class Worker implements Runnable{
 	public static Object handle(Task input){
 		return null;
 	}
-	
-
 
 	public void setWorkerQueue(ConcurrentLinkedQueue<Task> workQueue) {
 		this.workQueue=workQueue;
@@ -33,5 +31,4 @@ public class Worker implements Runnable{
 		this.resultMap=resultMap;
 		
 	}
-
 }

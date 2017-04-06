@@ -37,6 +37,4 @@ public class UsePriorityBlockingQueue {
 		}
 		System.out.println("result:"+q);
 	}
-	
-
 }

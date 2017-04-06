@@ -3,7 +3,6 @@ package zx.design.future;
 public class FutureData implements Data{
 	
 	private RealData realData;
-	
 	private boolean isReady = false;
 	
 	public synchronized void setRealData(RealData realData){

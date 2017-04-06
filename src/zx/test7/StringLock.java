@@ -29,13 +29,11 @@ public class StringLock {
 		},"t1");
 		
 		Thread t2 = new Thread(new Runnable(){
-
 			@Override
 			public void run() {
 				stringlock.method();
 			}
 		},"t2");
-		
 		t1.start();
 		t2.start();
 	}

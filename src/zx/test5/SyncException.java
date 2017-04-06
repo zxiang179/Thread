@@ -36,5 +36,4 @@ public class SyncException {
 		},"t1");
 		t1.start();
 	}
-
 }

@@ -27,6 +27,4 @@ public class VolatileNoAtomic extends Thread{
 			arr[i].start();
 		}
 	}
-	
-
 }

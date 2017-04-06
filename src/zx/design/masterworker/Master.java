@@ -9,13 +9,10 @@ public class Master {
 
 	//1 应该有一个承装任务的集合
 	private ConcurrentLinkedQueue<Task> workQueue = new  ConcurrentLinkedQueue<Task>();
-	
 	//2 使用普通的HashMap去承装所有的worker对象
 	private HashMap<String,Thread> workers = new HashMap<String,Thread>();
-	
 	//3 使用一个容器承装每一个worker并发执行的结果集
 	private ConcurrentHashMap<String,Object> resultMap = new ConcurrentHashMap<String,Object>();
-	
 	//4 构造方法
 	public Master(Worker worker,int workerCount){
 		//每一个worker对象都需要有master的应用workQueue用于任务的领取，resultMap用于任务的提交

@@ -40,7 +40,6 @@ public class ListAdd1 {
 						System.out.println("当前线程接收到通知："+Thread.currentThread().getName()+" list.size = 5 线程停止");
 						throw new RuntimeException();
 					}
-					System.out.println(Thread.currentThread().getName()+"线程正在执行...");
 				}
 			}
 		},"t2");
@@ -49,8 +48,5 @@ public class ListAdd1 {
 		//当list中的元素大小等于5，停止t2线程
 		t2.start();
 		
-		
 	}
-	
-	
 }

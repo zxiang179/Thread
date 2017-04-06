@@ -8,19 +8,15 @@ public class MyQueue {
 	
 	//1.需要一个集合承装元素
 	private final LinkedList<Object> list = new LinkedList<Object>();
-	
 	//2.需要一个计数器
 	private AtomicInteger count = new AtomicInteger(0);
-	
 	//3.需要指定上限和下限
 	private int minSize=0;
 	private int maxSize;
-	
 	//4.构造方法
 	public MyQueue(int size){
 		this.maxSize=size;
 	}
-	
 	//5.初始化一个对象用于加锁
 	private final Object lock = new Object();
 	
