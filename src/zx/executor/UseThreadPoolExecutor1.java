@@ -1,6 +1,7 @@
 package zx.executor;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -19,8 +20,10 @@ public class UseThreadPoolExecutor1 {
 				2,//MaxSize
 				60,//60
 				TimeUnit.SECONDS, 
-				new ArrayBlockingQueue<Runnable>(3)//指定一种队列（有界队列）
+				new ArrayBlockingQueue<Runnable>(3),//指定一种队列（有界队列）
+				new MyRejected()
 				);
+		
 		MyTask mt1 = new MyTask(1,"任务1");
 		MyTask mt2 = new MyTask(2,"任务2");
 		MyTask mt3 = new MyTask(3,"任务3");
@@ -33,7 +36,7 @@ public class UseThreadPoolExecutor1 {
 		pool.execute(mt3);
 		pool.execute(mt4);
 		pool.execute(mt5);
-//		pool.execute(mt6);
+		pool.execute(mt6);
 		
 		pool.shutdown();
 		
