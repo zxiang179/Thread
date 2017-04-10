@@ -29,11 +29,13 @@ public class UseFuture implements Callable<String>{
 		String queryStr = "query";
 		//构建FutureTask，并且传入需要真正进行业务处理的类，该类一定是实现了Callable接口的类
 		FutureTask<String> future = new FutureTask<String>(new UseFuture(queryStr));
+		FutureTask<String> future2 = new FutureTask<String>(new UseFuture(queryStr));
 		//创建一个固定线程的线程池且线程数为1
-		ExecutorService executor = Executors.newFixedThreadPool(1);
+		ExecutorService executor = Executors.newFixedThreadPool(2);
 		//这里提交任务future，则开启线程执行RealData的call()方法执行
 		//submit和executor的区别：第一点 submit可以传入实现callable接口的实力对象 第二点 submit方法有返回值
-		Future f = executor.submit(future);
+		Future f1 = executor.submit(future);
+		Future f2 = executor.submit(future2);
 		System.out.println("请求完毕");
 		//当返回值为null 表示执行结束
 		/*System.out.println(f.get());
@@ -51,6 +53,7 @@ public class UseFuture implements Callable<String>{
 		}
 		//调用获取数据方法，如果call()方法没有执行完成，则依旧会等待,get()方法异步获取执行结果
 		System.out.println("数据:"+future.get());
+		System.out.println("数据:"+future2.get());
 		executor.shutdown();
 		
 	}
