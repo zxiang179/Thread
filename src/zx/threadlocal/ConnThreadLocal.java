@@ -1,5 +1,7 @@
 package zx.threadlocal;
 
+import java.util.Vector;
+
 public class ConnThreadLocal {
 	
 	public static ThreadLocal<String> th = new ThreadLocal<String>();
@@ -14,6 +16,8 @@ public class ConnThreadLocal {
 	
 	public static void main(String[] args) {
 		final ConnThreadLocal ct = new ConnThreadLocal();
+		Vector vector = new Vector();
+		vector.add("123");
 		
 		Thread t1 = new Thread(new Runnable(){
 			@Override

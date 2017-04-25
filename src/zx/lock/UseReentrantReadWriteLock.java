@@ -70,7 +70,7 @@ public class UseReentrantReadWriteLock {
         //Ð´Ð´»¥³â
 		t3.start();
 		t4.start();
-		//;¶ÁÐ´»¥³â
+		//¶ÁÐ´»¥³â
 		t1.start();
 		t3.start();
 		

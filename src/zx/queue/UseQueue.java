@@ -84,7 +84,7 @@ public class UseQueue {
 				q.add("asdasd");
 			}
 		});
-		//现有take才能add
+		//先有take才能add
 		t1.start();
 		t2.start();
 	}

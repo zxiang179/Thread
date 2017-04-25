@@ -10,7 +10,7 @@ public class AtomicUse {
 	//多个addAndGet在一个方法中是非原子性的，需要加synchronized进行修饰，保证4个addAndGet的原子性
 	private synchronized int multiAdd(){
 		try{ 
-			Thread.sleep(100);
+			Thread.sleep(1);
 		}catch(InterruptedException e){
 			e.printStackTrace();
 		}
@@ -19,6 +19,7 @@ public class AtomicUse {
 		count.addAndGet(3);
 		count.addAndGet(4);
 		return count.get();
+		
 	}
 	
 	public static void main(String[] args) {

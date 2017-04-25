@@ -3,14 +3,14 @@ package zx.queue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
-public class Wangmin implements Delayed{
+public class InternetUsers implements Delayed{
 	
     private String name;
     private String id;
     private long endTime;
     private TimeUnit timeUnit = TimeUnit.SECONDS;
     
-    public Wangmin(String name,String id,long endTime){
+    public InternetUsers(String name,String id,long endTime){
     	this.name=name;
     	this.id=id;
     	this.endTime=endTime;
@@ -21,7 +21,7 @@ public class Wangmin implements Delayed{
      */
     @Override
 	public int compareTo(Delayed delayed) {
-    	Wangmin w = (Wangmin)delayed;
+    	InternetUsers w = (InternetUsers)delayed;
 		return this.getDelay(this.timeUnit)-w.getDelay(this.timeUnit)>0?1:0;
 	}
 
@@ -64,6 +64,12 @@ public class Wangmin implements Delayed{
 
 	public void setTimeUnit(TimeUnit timeUnit) {
 		this.timeUnit = timeUnit;
+	}
+
+	@Override
+	public String toString() {
+		return "Wangmin [name=" + name + ", id=" + id + ", endTime=" + endTime
+				+ ", timeUnit=" + timeUnit + "]";
 	}
 
 	

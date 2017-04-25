@@ -10,8 +10,14 @@ public class MyThread extends Thread{
 	
 	@Override
 	public synchronized void run() {
-		count--;
-		System.out.println(this.currentThread().getName()+" count="+count);
+		try {
+			count--;
+			System.out.println(this.currentThread().getName()+" count="+count);
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {

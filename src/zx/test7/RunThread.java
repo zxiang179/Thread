@@ -3,7 +3,8 @@ package zx.test7;
 public class RunThread extends Thread{
 	
 	//volatile
-	private volatile boolean isRunning = true;
+//	private volatile boolean isRunning = true;
+	private boolean isRunning = true;
 	private void setRunning(boolean isRunning){
 		this.isRunning=isRunning;
 	}
